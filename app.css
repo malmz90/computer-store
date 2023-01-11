@@ -1,0 +1,27 @@
+.name {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.balanceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.loanContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+.loanBtn {
+  background-color: rgba(90, 250, 159, 0.778);
+}
