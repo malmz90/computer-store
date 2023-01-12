@@ -1,18 +1,54 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="app.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Computer Store</h1>
-    <div class="container">
-      <p class="name">Joe banker</p>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="app.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="titleContainer">
+    <h1 class="title">Computer Store</h1>
+  </div>
+  <div class="container">
+
+    <div class="card">
+      <p class="name">Joe banker</p>
       <div class="balanceContainer">
         <p>Balance</p>
+        <p id="balance"></p>
+      </div>
+      <div class="loanContainer" id="loanContainer">
+        <p>Loan</p>
+        <p id="loan"></p>
+      </div>
+      <div class="btnContainer">
+        <button class="loanBtn" id="loanBtn">Get a loan</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="name">Work</p>
+      <div class="balanceContainer">
+        <p>Pay</p>
+        <p id="pay">0</p>
+      </div>
+      <div class="loanContainer" id="loanContainer">
+        <p>Loan</p>
+        <p id="loan"></p>
+      </div>
+      <div class="workBtnContainer">
+        <button class="bankBtn" id="bankBtn">Bank</button>
+        <button class="workBtn" id="workBtn">Work</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="name">Laptops</p>
+      <div class="balanceContainer">
+        <p>Description</p>
         <p id="balance"></p>
       </div>
       <div class="loanContainer" id="loanContainer">
@@ -22,6 +58,10 @@
       <button class="loanBtn" id="loanBtn">Get a loan</button>
     </div>
 
-    <script src="app.js"></script>
-  </body>
+
+  </div>
+  <script type="text/javascript" src="bank.js"></script>
+  <script type="text/javascript" src="work.js"></script>
+</body>
+
 </html>

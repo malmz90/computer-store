@@ -8,7 +8,6 @@ const balance = Number(document.getElementById("balance").innerHTML);
 
 const handleLoan = () => {
   const userLoanInput = Number(prompt("Type in how much you wish to loan: "));
-  console.log(loan);
   if (loan > 0) {
     return alert("you already have a loan");
   }
