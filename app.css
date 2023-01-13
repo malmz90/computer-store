@@ -78,3 +78,8 @@ button {
 .laptopBtn {
   margin-bottom: auto;
 }
+
+.kr {
+  display: flex;
+  flex-direction: row;
+}
