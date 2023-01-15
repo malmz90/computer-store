@@ -1,7 +1,6 @@
 const loanBtnElement = document.getElementById("loanBtn");
 
 let initiaBalance = 200;
-let loan = 0;
 document.getElementById("balance").innerHTML = initiaBalance;
 
 const containsOnlyNumbers = (input) => {
@@ -10,6 +9,8 @@ const containsOnlyNumbers = (input) => {
 
 const handleLoan = () => {
   const balance = Number(document.getElementById("balance").innerHTML);
+  const loan = Number(document.getElementById("loan").innerHTML);
+  console.log("t", loan);
   if (loan > 0) {
     return alert("You already have a loan");
   }
@@ -25,7 +26,6 @@ const handleLoan = () => {
   if (parseInputToNumber <= balance * 2) {
     document.getElementById("loan").innerHTML = userLoanInput;
     document.getElementById("loanContainer").style.visibility = "visible";
-    loan = userLoanInput;
   }
 };
 
