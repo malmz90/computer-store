@@ -1,5 +1,6 @@
 const workBtnElement = document.getElementById("workBtn");
 const bankBtnElement = document.getElementById("bankBtn");
+const payLoanBtnElement = document.getElementById("payloan");
 
 const handleWork = () => {
   let pay = Number(document.getElementById("pay").innerHTML);
@@ -9,6 +10,28 @@ const handleWork = () => {
 
 const handlePayBack = (loan, pay) => {
   return loan - (pay / 100) * 10;
+};
+
+const payLoan = () => {
+  let pay = Number(document.getElementById("pay").innerHTML);
+  let loan = Number(document.getElementById("loan").innerHTML);
+  let balance = Number(document.getElementById("balance").innerHTML);
+  let newLoanBalance = loan - pay;
+  if (newLoanBalance > 0) {
+    document.getElementById("loan").innerHTML = newLoanBalance;
+  } else if (newLoanBalance == 0) {
+    document.getElementById("loan").innerHTML = newLoanBalance;
+    document.getElementById("loanContainer").style.visibility = "hidden";
+    document.getElementById("payloan").style.visibility = "hidden";
+  } else {
+    newLoanBalance = Math.abs(newLoanBalance);
+    document.getElementById("loan").innerHTML = 0;
+    document.getElementById("balance").innerHTML = balance + newLoanBalance;
+    document.getElementById("loanContainer").style.visibility = "hidden";
+    document.getElementById("payloan").style.visibility = "hidden";
+  }
+
+  document.getElementById("pay").innerHTML = 0;
 };
 
 const transferMoney = () => {
@@ -30,8 +53,10 @@ const transferMoney = () => {
   let updatedLoan = Number(document.getElementById("loan").innerHTML);
   if (updatedLoan <= 0) {
     document.getElementById("loanContainer").style.visibility = "hidden";
+    document.getElementById("payloan").style.visibility = " hidden";
   }
 };
 
 bankBtnElement.addEventListener("click", transferMoney);
 workBtnElement.addEventListener("click", handleWork);
+payLoanBtnElement.addEventListener("click", payLoan);

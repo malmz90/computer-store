@@ -13,64 +13,72 @@
     <h1 class="title">Computer Store</h1>
   </div>
   <div class="container">
-
-    <div class="card">
-      <p class="name">Joe banker</p>
-      <div class="balanceContainer">
-        <p>Balance</p>
-        <div class="kr">
-          <p id="balance"></p>
-          <p>kr</p>
+    <div class="cardContainer">
+      <div class="card">
+        <p class="name">Joe banker</p>
+        <div class="balanceContainer">
+          <p>Balance</p>
+          <div class="kr">
+            <p id="balance"></p>
+            <p>kr</p>
+          </div>
+        </div>
+        <div class="loanContainer" id="loanContainer">
+          <p>Loan</p>
+          <div class="kr">
+            <p id="loan"></p>
+            <p>kr</p>
+          </div>
+        </div>
+        <div class="btnContainer">
+          <button class="loanBtn" id="loanBtn">Get a loan</button>
         </div>
       </div>
-      <div class="loanContainer" id="loanContainer">
-        <p>Loan</p>
-        <div class="kr">
-          <p id="loan"></p>
-          <p>kr</p>
+
+      <div class="card">
+        <p class="name">Work</p>
+        <div class="balanceContainer">
+          <p>Pay</p>
+          <div class="kr">
+            <p id="pay">0</p>
+            <p>kr</p>
+          </div>
+        </div>
+
+        <button class="payLoanBtn" id="payloan">Pay loan</button>
+        <div class="workBtnContainer">
+          <button class="bankBtn" id="bankBtn">Bank</button>
+          <button class="workBtn" id="workBtn">Work</button>
         </div>
       </div>
-      <div class="btnContainer">
-        <button class="loanBtn" id="loanBtn">Get a loan</button>
-      </div>
-    </div>
 
-    <div class="card">
-      <p class="name">Work</p>
-      <div class="balanceContainer">
-        <p>Pay</p>
-        <div class="kr">
-          <p id="pay">0</p>
-          <p>kr</p>
+      <div class="card">
+        <p class="name">Laptops</p>
+        <div class="balanceContainer">
+          <div class="selectContainer">
+            <select id="laptop"></select>
+            <p>Features:</p>
+            <ul id="specs"></ul>
+          </div>
         </div>
-      </div>
-      <div class="loanContainer" id="loanContainer">
-        <p>Loan</p>
-        <p id="loan"></p>
-      </div>
-      <div class="workBtnContainer">
-        <button class="bankBtn" id="bankBtn">Bank</button>
-        <button class="workBtn" id="workBtn">Work</button>
+
       </div>
     </div>
-
-    <div class="card">
-      <p class="name">Laptops</p>
-      <div class="balanceContainer">
-        <p>Description</p>
-        <p id="balance"></p>
+    <div class="computerCard">
+      <img id="image" src="" alt="" />
+      <div class="titleDesc">
+        <h1 class="computerTitle" id="title"></h1>
+        <p id="description"></p>
       </div>
-      <div class="loanContainer" id="loanContainer">
-        <p>Loan</p>
-        <p id="loan"></p>
+      <div>
+        <p id="price"></p>
+        <button id="buy">BUY NOW</button>
       </div>
-      <button class="loanBtn" id="loanBtn">Get a loan</button>
     </div>
-
-
   </div>
   <script type="text/javascript" src="bank.js"></script>
   <script type="text/javascript" src="work.js"></script>
+  <script type="text/javascript" src="laptops.js"></script>
 </body>
 
 </html>

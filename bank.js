@@ -10,7 +10,6 @@ const containsOnlyNumbers = (input) => {
 const handleLoan = () => {
   const balance = Number(document.getElementById("balance").innerHTML);
   const loan = Number(document.getElementById("loan").innerHTML);
-  console.log("t", loan);
   if (loan > 0) {
     return alert("You already have a loan");
   }
@@ -24,8 +23,10 @@ const handleLoan = () => {
   let parseInputToNumber = Number(userLoanInput);
 
   if (parseInputToNumber <= balance * 2) {
-    document.getElementById("loan").innerHTML = userLoanInput;
+    document.getElementById("loan").innerHTML = parseInputToNumber;
+    document.getElementById("balance").innerHTML = balance + parseInputToNumber;
     document.getElementById("loanContainer").style.visibility = "visible";
+    document.getElementById("payloan").style.visibility = "visible";
   }
 };
 
