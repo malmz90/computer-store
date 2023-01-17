@@ -11,6 +11,25 @@ fetch("https://hickory-quilled-actress.glitch.me/computers")
 
 const addLaptopsToCard = (laptops) => {
   laptops.forEach((x) => addLaptopToMenu(x));
+  setFirstLaptop(laptops);
+};
+
+const setFirstLaptop = (laptops) => {
+  document.getElementById("description").innerHTML = laptops[0].description;
+  document.getElementById("title").innerHTML = laptops[0].title;
+  document.getElementById("price").innerHTML = laptops[0].price;
+  document.getElementById(
+    "image"
+  ).src = `https://hickory-quilled-actress.glitch.me/${laptops[0].image}`;
+  const specList = document.createElement("li");
+
+  laptops[0].specs.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerText = item;
+    specList.appendChild(li);
+  });
+  specsElement.innerHTML = "";
+  specsElement.appendChild(specList);
 };
 
 const addLaptopToMenu = (laptop) => {
