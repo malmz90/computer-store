@@ -15,14 +15,16 @@ const handleLoan = () => {
   }
 
   const userLoanInput = prompt("Type in how much you wish to loan: ");
+
   let validateInput = containsOnlyNumbers(userLoanInput);
 
   if (!validateInput) {
     return alert("Please only use numbers");
   }
+
   let parseInputToNumber = Number(userLoanInput);
 
-  if (parseInputToNumber <= balance * 2) {
+  if (parseInputToNumber > 0 && parseInputToNumber <= balance * 2) {
     document.getElementById("loan").innerHTML = parseInputToNumber;
     document.getElementById("balance").innerHTML = balance + parseInputToNumber;
     document.getElementById("loanContainer").style.visibility = "visible";
