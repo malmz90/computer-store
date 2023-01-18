@@ -37,6 +37,7 @@ const transferMoney = () => {
 
   if (loan > 0) {
     let sumToPayOf = (pay / 100) * 10;
+
     let balanceAfterPayLoan = balance + pay - sumToPayOf;
     document.getElementById("loan").innerHTML = loan - sumToPayOf;
     document.getElementById("balance").innerHTML = balanceAfterPayLoan;
@@ -45,10 +46,20 @@ const transferMoney = () => {
     document.getElementById("balance").innerHTML = pay + balance;
     document.getElementById("pay").innerHTML = 0;
   }
-  let updatedLoan = Number(document.getElementById("loan").innerHTML);
-  if (updatedLoan <= 0) {
+
+  let updatedLoanBalance = Number(document.getElementById("loan").innerHTML);
+  let updatedBalance = Number(document.getElementById("balance").innerHTML);
+  console.log(updatedBalance);
+
+  if (updatedLoanBalance <= 0) {
     document.getElementById("loanContainer").style.visibility = "hidden";
     document.getElementById("payloan").style.visibility = "hidden";
+  }
+
+  if (updatedLoanBalance < 0) {
+    updatedLoanBalance = Math.abs(updatedLoanBalance);
+    document.getElementById("balance").innerHTML =
+      updatedBalance + updatedLoanBalance;
   }
 };
 
