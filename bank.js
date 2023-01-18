@@ -16,6 +16,8 @@ const handleLoan = () => {
 
   const userLoanInput = prompt("Type in how much you wish to loan: ");
 
+  if (userLoanInput === null) return;
+
   let validateInput = containsOnlyNumbers(userLoanInput);
 
   if (!validateInput) {

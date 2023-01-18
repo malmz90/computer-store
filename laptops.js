@@ -4,12 +4,18 @@ const buyButtonElement = document.getElementById("buy");
 const missingImage = "assets/images/5.png";
 let laptops = [];
 
-fetch("https://hickory-quilled-actress.glitch.me/computers")
-  .then((res) => res.json())
-  .then((data) => {
-    laptops = data;
-    addLaptopsToCard(laptops);
-  });
+const getLaptops = () => {
+  try {
+    fetch("https://hickory-quilled-actress.glitch.me/computers")
+      .then((res) => res.json())
+      .then((data) => {
+        laptops = data;
+        addLaptopsToCard(laptops);
+      });
+  } catch (error) {
+    console.log("error", error);
+  }
+};
 
 const addLaptopsToCard = (laptops) => {
   laptops.forEach((x) => addLaptopToMenu(x));
@@ -23,6 +29,7 @@ const setFirstLaptop = (laptops) => {
   document.getElementById(
     "image"
   ).src = `https://hickory-quilled-actress.glitch.me/${laptops[0].image}`;
+
   const specList = document.createElement("li");
 
   laptops[0].specs.forEach((item) => {
@@ -81,5 +88,6 @@ const handleBuy = () => {
   }
 };
 
+getLaptops();
 buyButtonElement.addEventListener("click", handleBuy);
 laptopsElement.addEventListener("change", handleChange);
