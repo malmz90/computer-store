@@ -20,3 +20,8 @@ The project consists of 3 main parts as follows:
 - Open the project in Vscode
 - Download live server in extenstions in vscode
 - In the index.html file right click and press "Open with live server"
+
+## If i had more time i would:
+
+- Test more for buggs and errors
+- Refactor code
